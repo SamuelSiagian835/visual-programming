@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-11-17 04:37:11 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC0yMjhVR0s4RTsyMDIxLTExLTE3OzEyOjEyOjQxIFBNOzI3NTg="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC0yMjhVR0s4RTsyMDIxLTExLTE3OzAyOjU5OjAzIFBNOzE2OzI5Mjg="/>
+        <attribute name="edited" value="TGVub3ZvO0xBUFRPUC1MNkdGMjFBMTsyMDIxLTExLTE3OzA0OjM3OjExIFBNOzI7MzAwNA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="pal" type="Boolean" array="False" size=""/>
+            <declare name="huruf" type="String" array="False" size=""/>
+            <input variable="huruf"/>
+            <assign variable="pal" expression="true"/>
+            <assign variable="i" expression="0"/>
+            <call expression="palindrom(pal, i, huruf)"/>
+        </body>
+    </function>
+    <function name="palindrom" type="String" variable="palindrom">
+        <parameters>
+            <parameter name="pal" type="Boolean" array="False"/>
+            <parameter name="i" type="Integer" array="False"/>
+            <parameter name="huruf" type="String" array="False"/>
+        </parameters>
+        <body>
+            <while expression="i &lt; len(huruf)/2 -1 and pal = true">
+                <if expression="char(huruf, i) &lt;&gt; char(huruf, len(huruf)-i-1)">
+                    <then>
+                        <assign variable="pal" expression="false"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="i" expression="i+1"/>
+            </while>
+            <declare name="palindrom" type="String" array="False" size=""/>
+            <if expression="pal=true">
+                <then>
+                    <assign variable="palindrom" expression="&quot;YA&quot;"/>
+                </then>
+                <else>
+                    <assign variable="palindrom" expression="&quot;BUKAN&quot;"/>
+                </else>
+            </if>
+            <output expression="palindrom" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

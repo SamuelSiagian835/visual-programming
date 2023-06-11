@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-12-13 05:12:22 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC0yMjhVR0s4RTsyMDIxLTEyLTEzOzA0OjQ0OjU5IFBNOzI3NzA="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC0yMjhVR0s4RTsyMDIxLTEyLTEzOzA0OjU5OjAzIFBNOzU7RGFuaWVsO0xBUFRPUC1RQTBRVE8zQTsyMDIxLTEyLTEzOzAxOjQ2OjA3IFBNO1gwMiAoNikuZnByZzs2NzUx"/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC0yMjhVR0s4RTsyMDIxLTEyLTEzOzA1OjEyOjIyIFBNOzE7Mjg2NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="arrISBN" type="String" array="True" size="5"/>
+            <declare name="arrHargaBuku" type="Real" array="True" size="5"/>
+            <declare name="arrJumlahBuku" type="Integer" array="True" size="5"/>
+            <declare name="n, s" type="Integer" array="False" size=""/>
+            <assign variable="n" expression="0"/>
+            <declare name="Done" type="Boolean" array="False" size=""/>
+            <assign variable="Done" expression="True"/>
+            <for variable="s" start="0" end="4" direction="inc" step="1">
+                <call expression="defaultValue(arrISBN,arrHargaBuku,arrJumlahBuku,s)&#13;&#10;"/>
+            </for>
+            <call expression="Katalog(arrISBN, arrHargaBuku, s, Done)"/>
+            <call expression="PesananBuku(arrISBN,arrJumlahBuku,n,s,Done)"/>
+            <call expression="TotalHargaBuku(arrJumlahBuku,arrHargaBuku,s)"/>
+        </body>
+    </function>
+    <function name="defaultValue" type="None" variable="">
+        <parameters>
+            <parameter name="arrISBN" type="String" array="True"/>
+            <parameter name="arrHargaBuku" type="Real" array="True"/>
+            <parameter name="arrJumlahBuku" type="Integer" array="True"/>
+            <parameter name="s" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <assign variable="arrISBN[s]" expression="&quot;&quot;"/>
+            <assign variable="arrHargaBuku[s]" expression="0.0"/>
+            <assign variable="arrJumlahBuku[s]" expression="0"/>
+        </body>
+    </function>
+    <function name="Katalog" type="None" variable="">
+        <parameters>
+            <parameter name="arrISBN" type="String" array="True"/>
+            <parameter name="arrHargaBuku" type="Real" array="True"/>
+            <parameter name="s" type="Integer" array="False"/>
+            <parameter name="Done" type="Boolean" array="False"/>
+        </parameters>
+        <body>
+            <declare name="HargaBuku" type="Real" array="False" size=""/>
+            <declare name="ISBN" type="String" array="False" size=""/>
+            <for variable="s" start="0" end="4" direction="inc" step="1">
+                <input variable="ISBN"/>
+                <input variable="HargaBuku"/>
+                <assign variable="arrISBN[s]" expression="ISBN"/>
+                <assign variable="arrHargaBuku[s]" expression="HargaBuku"/>
+            </for>
+        </body>
+    </function>
+    <function name="PesananBuku" type="None" variable="">
+        <parameters>
+            <parameter name="arrISBN" type="String" array="True"/>
+            <parameter name="arrJumlahBuku" type="Integer" array="True"/>
+            <parameter name="n" type="Integer" array="False"/>
+            <parameter name="s" type="Integer" array="False"/>
+            <parameter name="Done" type="Boolean" array="False"/>
+        </parameters>
+        <body>
+            <declare name="JumlahBuku" type="Integer" array="False" size=""/>
+            <declare name="ISBN" type="String" array="False" size=""/>
+            <assign variable="s" expression="0"/>
+            <do expression="Done = True">
+                <input variable="ISBN"/>
+                <if expression="ISBN != &quot;---&quot;">
+                    <then>
+                        <input variable="JumlahBuku"/>
+                        <for variable="n" start="0" end="4" direction="inc" step="1">
+                            <if expression="arrISBN[n] = ISBN">
+                                <then>
+                                    <assign variable="arrJumlahBuku[n]" expression="JumlahBuku"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </for>
+                        <assign variable="s" expression="s+1"/>
+                    </then>
+                    <else>
+                        <assign variable="Done" expression="False"/>
+                    </else>
+                </if>
+            </do>
+        </body>
+    </function>
+    <function name="TotalHargaBuku" type="None" variable="">
+        <parameters>
+            <parameter name="arrJumlahBuku" type="Integer" array="True"/>
+            <parameter name="arrHargaBuku" type="Real" array="True"/>
+            <parameter name="s" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="HargaBuku" type="Real" array="False" size=""/>
+            <declare name="TotalHargaBuku" type="Real" array="False" size=""/>
+            <assign variable="TotalHargaBuku" expression="0.0"/>
+            <for variable="s" start="0" end="4" direction="inc" step="1">
+                <assign variable="HargaBuku" expression="arrHargaBuku[s]*arrJumlahBuku[s]"/>
+                <assign variable="TotalHargaBuku" expression="TotalhargaBuku+HargaBuku"/>
+            </for>
+            <output expression="toFixed(TotalHargaBuku,2)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

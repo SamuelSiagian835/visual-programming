@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-12-08 08:48:38 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC02UFZCTFUzVDsyMDIxLTEyLTAzOzA2OjQ0OjM3IFBNOzI4Mzc="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC02UFZCTFUzVDsyMDIxLTEyLTAzOzA5OjAzOjI1IFBNOzQ7Mjk0Mw=="/>
+        <attribute name="edited" value="TGVub3ZvO0xBUFRPUC1MNkdGMjFBMTsyMDIxLTEyLTA4OzA4OjQ4OjM4IFBNOzI7MzAyMA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="NIM, NamaLengkap, ProgramStudi, UsernameGithub, NomorTelepon" type="String" array="False" size=""/>
+            <declare name="NamaPanggilan, JenisKelamin, Sapaan" type="String" array="False" size=""/>
+            <declare name="Angkatan" type="Integer" array="False" size=""/>
+            <input variable="NIM"/>
+            <input variable="NamaLengkap"/>
+            <input variable="ProgramStudi"/>
+            <input variable="UsernameGithub"/>
+            <input variable="NomorTelepon"/>
+            <input variable="NamaPanggilan"/>
+            <input variable="JenisKelamin"/>
+            <input variable="Angkatan"/>
+            <if expression="JenisKelamin==&quot;P&quot;">
+                <then>
+                    <if expression="Angkatan&lt;2020">
+                        <then>
+                            <assign variable="Sapaan" expression="&quot;Kak&quot;&amp; &quot; &quot; &amp;NamaPanggilan"/>
+                        </then>
+                        <else>
+                            <assign variable="Sapaan" expression="&quot;Bang&quot;&amp; &quot; &quot; &amp;NamaPanggilan"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <assign variable="Sapaan" expression="NamaPanggilan"/>
+                </else>
+            </if>
+            <output expression="NIM&amp;&quot;#&quot;&amp;NamaLengkap&amp;&quot;#&quot;&amp;Programstudi&amp;&quot;#&quot;&amp;UsernameGitHub&amp;&quot;#&quot;&amp;NomorTelepon" newline="True"/>
+            <output expression="Sapaan" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

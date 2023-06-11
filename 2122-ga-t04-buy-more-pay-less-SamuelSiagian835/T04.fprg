@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-10-23 12:22:38 PM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC0yMjhVR0s4RTsyMDIxLTEwLTIzOzEwOjUwOjE5IEFNOzI3NDQ="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC0yMjhVR0s4RTsyMDIxLTEwLTIzOzExOjU5OjMzIEFNOzI7TEVOT1ZPO0xBUFRPUC0yMjhVR0s4RTsyMDIxLTEwLTExOzAyOjA1OjQ5IFBNO1gwMS5mcHJnOzYzOTk="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC0yMjhVR0s4RTsyMDIxLTEwLTIzOzEyOjIyOjM4IFBNOzE7Mjg2OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="Isbn" type="String" array="False" size=""/>
+            <declare name="BMPL" type="Integer" array="False" size=""/>
+            <declare name="Diskon" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <assign variable="n" expression="3"/>
+            <declare name="ArrIsbn" type="String" array="True" size="n"/>
+            <declare name="ArrHargaBuku" type="Real" array="True" size="n"/>
+            <declare name="ArrJumlah" type="String" array="True" size="n"/>
+            <declare name="TotalHargaBuku" type="Real" array="False" size=""/>
+            <assign variable="TotalHargaBuku" expression="0"/>
+            <do expression="Isbn!=&quot;---&quot;">
+                <input variable="Isbn"/>
+                <if expression="Isbn!=&quot;---&quot;">
+                    <then>
+                        <declare name="Pengurangan" type="String" array="False" size=""/>
+                        <declare name="Penambahan" type="String" array="False" size=""/>
+                        <declare name="HargaBuku" type="Real" array="False" size=""/>
+                        <declare name="Jumlah" type="Integer" array="False" size=""/>
+                        <input variable="HargaBuku"/>
+                        <input variable="Jumlah"/>
+                        <input variable="BMPL"/>
+                        <if expression="BMPL&gt;1">
+                            <then>
+                                <input variable="b"/>
+                                <assign variable="Pengurangan" expression="&quot;Jumlah-b&quot;"/>
+                            </then>
+                            <else>
+                                <input variable="b"/>
+                                <assign variable="Penambahan" expression="&quot;Jumlah+b&quot;"/>
+                            </else>
+                        </if>
+                        <assign variable="TotalHargaBuku" expression="TotalHargaBuku+(HargaBuku*Jumlah)"/>
+                        <if expression="Jumlah&gt;=5">
+                            <then>
+                                <assign variable="Diskon" expression="2"/>
+                            </then>
+                            <else>
+                                <if expression="Jumlah&gt;=10">
+                                    <then>
+                                        <assign variable="Diskon" expression="5"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="Diskon" expression="12"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                        <assign variable="TotalHargaBuku" expression="TotalHargaBuku+(HargaBuku*Jumlah)"/>
+                    </then>
+                    <else>
+                        <output expression="ToFixed(TotalHargaBuku, 2)" newline="True"/>
+                    </else>
+                </if>
+            </do>
+        </body>
+    </function>
+</flowgorithm>

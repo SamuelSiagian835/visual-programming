@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="LENOVO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-12-08 10:33:51 AM"/>
+        <attribute name="created" value="TEVOT1ZPO0xBUFRPUC0yMjhVR0s4RTsyMDIxLTEyLTAzOzA2OjI1OjExIFBNOzI3NTg="/>
+        <attribute name="edited" value="TEVOT1ZPO0xBUFRPUC0yMjhVR0s4RTsyMDIxLTEyLTA0OzEyOjIzOjI1IFBNOzc7Mjg3Mw=="/>
+        <attribute name="edited" value="TGVub3ZvO0xBUFRPUC1MNkdGMjFBMTsyMDIxLTEyLTA4OzEwOjMzOjUxIEFNOzE7Mjk4Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="NIM, NamaLengkap, Prodi, UsernameGitHub, NoTelepon" type="String" array="False" size=""/>
+            <input variable="NIM"/>
+            <input variable="NamaLengkap"/>
+            <input variable="Prodi"/>
+            <input variable="NoTelepon"/>
+            <input variable="UsernameGitHub"/>
+            <output expression="NIM&amp;&quot;#&quot;&amp;NamaLengkap&amp;&quot;#&quot;&amp;Prodi&amp;&quot;#&quot;&amp;NoTelepon&amp;&quot;#&quot;&amp;UsernameGitHub" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

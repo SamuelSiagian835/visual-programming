@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Lenovo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-15 05:57:09 PM"/>
+        <attribute name="created" value="TGVub3ZvO0xBUFRPUC1MNkdGMjFBMTsyMDIxLTA5LTE1OzAyOjI3OjU4IFBNOzI5MDg="/>
+        <attribute name="edited" value="TGVub3ZvO0xBUFRPUC1MNkdGMjFBMTsyMDIxLTA5LTE1OzA1OjU3OjA5IFBNOzEwOzMwNjY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Stockbuku" type="Integer" array="False" size=""/>
+            <declare name="ISBNbuku, Judulbuku, Penulisbuku, TahunTerbitbuku, Penerbitbuku, Formatbuku" type="String" array="False" size=""/>
+            <declare name="Hargabuku, MinMarginbuku, Ratingbuku" type="Real" array="False" size=""/>
+            <input variable="ISBNbuku"/>
+            <input variable="Judulbuku"/>
+            <input variable="Penulisbuku"/>
+            <input variable="TahunTerbitbuku"/>
+            <input variable="Penerbitbuku"/>
+            <input variable="Formatbuku"/>
+            <input variable="Hargabuku"/>
+            <input variable="MinMarginbuku"/>
+            <input variable="Stockbuku"/>
+            <input variable="Ratingbuku"/>
+            <output expression="ISBNbuku&amp;&quot;|&quot;&amp;Judulbuku&amp;&quot;|&quot;&amp;Penulisbuku&amp;&quot;|&quot;&amp;TahunTerbitbuku&amp;&quot;|&quot;&amp;Penerbitbuku&amp;&quot;|&quot;&amp;Formatbuku&amp;&quot;|&quot;&amp;Hargabuku&amp;&quot;|&quot;&amp;MinMarginbuku&amp;&quot;|&quot;&amp;Stockbuku&amp;&quot;|&quot;&amp;Ratingbuku" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
